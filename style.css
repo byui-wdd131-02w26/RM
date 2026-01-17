@@ -95,3 +95,25 @@ body{
   max-width:100%;
   height:auto;
 }
+#theme-select{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+body.dark{
+  background:#121212;
+  color:#f1f1f1;
+}
+body.dark .page {
+  border-color: #333;
+}
+
+body.dark .rule {
+  border-top-color: #333;
+}
+
+body.dark .subtitle {
+  color: #8bb6ff;
+}
