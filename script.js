@@ -14,4 +14,3 @@ function changeTheme() {
     logo.src = 'images/byulogo.webp';
   }
 }
-
