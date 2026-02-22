@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout Form</title>
+
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
+
+  <link rel="stylesheet" href="form.css" />
+  <script src="form.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Checkout</h1>
+  </header>
+
+  <main>
+    <section class="errors"></section>
+
+    <form id="checkoutForm" action="completed.html" method="get">
+
+      
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="email@email.com" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      
+      <label for="paymentMethod">Payment Method:</label>
+      <select 
+        id="paymentMethod" 
+        name="paymentMethod" 
+        required 
+        aria-expanded="false" 
+        aria-controls="creditCardNumberContainer paypalUsernameContainer">
+
+        <option value="">Select Payment Method</option>
+        <option value="creditCard">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      
+      <div id="creditCardNumberContainer" class="card hide" role="region">
+
+  <div class="card-front">
+    <div class="card-top">
+      <span class="total">TOTAL: $199</span>
+      <span class="card-icon">💳</span>
+    </div>
+
+    <label for="creditCardNumber">CARD NUMBER</label>
+    <input 
+      type="text"
+      id="creditCardNumber"
+      name="creditCardNumber"
+      placeholder="1234 5678 9101 1020"
+        pattern="[0-9]{16}"
+    >
+
+    <div class="card-row">
+      <div>
+        <label for="cardHolder">CARD HOLDER</label>
+        <input type="text" id="cardHolder" placeholder="John Doe">
+      </div>
+
+      <div id="cardExpiration">
+        <label id="expirationDate">EXPIRATION</label>
+        <div class="exp-inputs">
+          <input type="text" id="month" name="expMonth" placeholder="MM" aria-labelledby="expirationDate">
+          <input type="text" id="year" name="expYear" placeholder="YY" aria-labelledby="expirationDate">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="card-back">
+    <div class="mag-strip"></div>
+
+    <label for="cvc">CVC/CVV</label>
+    <input type="text" id="cvc" name="cvc" placeholder="xxx" maxlength="3">
+  </div>
+
+</div>
+      
+      <div id="paypalUsernameContainer" class="hide" role="region" aria-labelledby="paypalLabel">
+        <label id="paypalLabel" for="paypalUsername">PayPal Username:</label>
+        <input
+          type="text"
+          id="paypalUsername"
+          name="paypalUsername"
+          placeholder="Enter PayPal username"
+          required
+        />
+      </div>
+
+      <button type="submit">Place Order</button>
+
+    </form>
+  </main>
+</body>
+</html>
