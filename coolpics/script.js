@@ -6,13 +6,13 @@ const closeButton = modal.querySelector('.close-viewer');
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
-    
-  
-
     const img = e.target.closest('img');
     if (!img) return;
 
-    modalImage.src = img.getAttribute('src');
+    const smallSrc = img.src;
+    const largeSrc = smallSrc.replace("coolpic.jpg", "high_img.jpg");
+
+    modalImage.src = largeSrc;
     modalImage.alt = img.alt;
 
     modal.showModal();
