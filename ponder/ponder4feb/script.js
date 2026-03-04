@@ -60,7 +60,7 @@ movies.forEach(movie => {
 
             <p><strong>Rating:</strong> ${movie.stars}</p>
 
-            <p id="desc">${movie.description}</p>
+            <p class="desc">${movie.description}</p>
         </article>
     `;
 
