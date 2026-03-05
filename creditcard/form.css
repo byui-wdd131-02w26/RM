@@ -1,125 +1,130 @@
-/* form-demo.css */
+:root {
+    --card-bg: #ccc;
+    --shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
 body {
-  font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    font-family: 'Times New Roman', serif;
+    background-color: #f4f4f4;
 }
 
-form {
-  width: 50%;
-  margin: 0 auto;
+.card-container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 20px;
 }
-
-h1, h2 {
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.errors {
-  white-space: pre-line;
-  color: red;
-}
-
-
-
-/* ========================= */
-/* CREDIT CARD STYLING */
-/* ========================= */
 
 .card {
-  background: #d9d9d9;
-  border-radius: 12px;
-  width: 450px;
-  margin: 30px auto;
-  box-shadow: 8px 8px 20px rgba(0,0,0,0.25);
-  overflow: hidden;
-
-  display: grid;
-  grid-template-columns: 4fr 1.2fr; /* makes right side narrower */
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* LEFT SIDE (Front of card) */
+
 .card-front {
-  padding: 25px;
-  display: grid;
-  gap: 18px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
 }
 
-/* RIGHT SIDE (Back strip area) */
 .card-back {
-  background: #cfcfcf;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Magnetic strip */
-.mag-strip {
-  height: 40px;
-  width: 100%;
-  background: black;
-  margin-bottom: 25px;
-}
-
-/* Card layout rows */
-.card-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 15px;
-}
-
-.exp-inputs {
-  display: flex;
-  gap: 8px;
-}
-
-.exp-inputs input {
-  width: 55px;
-}
-
-/* Top row inside card */
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-icon {
-  font-size: 22px;
-}
-
-/* Make CVC input smaller like example */
-.card-back input {
-  width: 70px;
+    top: 40px;
+    left: 100px;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    padding: 0;
 }
 
 
+.card-header { display: flex; justify-content: space-between; align-items: center; }
+.chip { width: 40px; height: 30px; border-radius: 4px; }
+.total { font-weight: bold; font-size: 1.2rem; }
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
 
 
-.hide {
-  display: none;
+.magnetic-strip {
+    background: #000;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.cvv-section {
+    padding: 20px;
+    align-self: center;
+    justify-self: end;
+}
+
+
+label { display: block; font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; }
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.exp-inputs { display: flex; gap: 5px; }
+
+#submitBtn {
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: #eee;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.hidden { display: none; }
+.success { color: green; font-weight: bold; margin-top: 15px; }
+.error { color: red; font-size: 0.9rem; margin-top: 5px; }
+
+.card-container {
+    position: relative;
+    width: 600px;
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+
+.card-back {
+    top: 40px;
+    left: 160px;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    padding: 0;
+}
+
+
+.cvv-section {
+    grid-row: 2;
+    justify-self: end;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.cvv-section input {
+    width: 80px;
 }
