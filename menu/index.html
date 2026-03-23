@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Menu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>🍕 CITY MENU</header>
+
+<div class="tabs">
+    <button class="active" onclick="filterMenu('all')">All</button>
+    <button onclick="filterMenu('pizza')">Pizza</button>
+    <button onclick="filterMenu('sandwich')">Sandwich</button>
+    <button onclick="filterMenu('salad')">Salads</button>
+    <button onclick="filterMenu('drink')">Drinks</button>
+    <button onclick="filterMenu('antipasta')">Antipasta</button>
+</div>
+
+<div id="menu" class="menu"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
