@@ -9,15 +9,18 @@
 
 <body>
 
-<header>🍕 CITY MENU</header>
+<header>
+    <h1 id="title">🍕 CITY MENU</h1>
+    <button id="langBtn">AL</button>
+</header>
 
 <div class="tabs">
-    <button class="active" onclick="filterMenu('all')">All</button>
-    <button onclick="filterMenu('pizza')">Pizza</button>
-    <button onclick="filterMenu('sandwich')">Sandwich</button>
-    <button onclick="filterMenu('salad')">Salads</button>
-    <button onclick="filterMenu('drink')">Drinks</button>
-    <button onclick="filterMenu('antipasta')">Antipasta</button>
+    <button class="active" onclick="filterMenu('all')" data-en="All" data-al="Të gjitha">All</button>
+    <button onclick="filterMenu('pizza')" data-en="Pizza" data-al="Pica">Pizza</button>
+    <button onclick="filterMenu('sandwich')" data-en="Sandwich" data-al="Sanduiç">Sandwich</button>
+    <button onclick="filterMenu('salad')" data-en="Salads" data-al="Sallata">Salads</button>
+    <button onclick="filterMenu('drink')" data-en="Drinks" data-al="Pije">Drinks</button>
+    <button onclick="filterMenu('antipasta')" data-en="Antipasta" data-al="Antipasta">Antipasta</button>
 </div>
 
 <div id="menu" class="menu"></div>

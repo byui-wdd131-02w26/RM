@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+
+:root {
+  /* YOUR PALETTE */
+  --primary-color: #0D1D39;     /* dark blue */
+  --secondary-color: #102347;   /* card blue */
+  --accent1-color: #FFB703;     /* yellow */
+  --accent2-color: #F5F7FB;     /* white */
+
+  /* fonts (unchanged) */
+  --heading-font: "IM Fell French Canon SC";
+  --paragraph-font: Lato, Helvetica, sans-serif;
+
+  /* TEXT + UI COLORS */
+  --headline-color-on-white: var(--primary-color);
+  --headline-color-on-color: var(--accent2-color);
+
+  --paragraph-color-on-white: var(--primary-color);
+  --paragraph-color-on-color: var(--accent2-color);
+
+  --paragraph-background-color: var(--primary-color);
+
+  --nav-link-color: var(--accent2-color);
+  --nav-background-color: var(--secondary-color);
+
+  --nav-hover-link-color: black;
+  --nav-hover-background-color: var(--accent1-color);
+}
+
+/*  DO NOT CHANGE BELOW */
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em;
+  font-size: 18px;
+  background-color: var(--primary-color); /* added for consistency */
+  color: var(--accent2-color);
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+  height: 3px;
+  margin: 35px 0;
+  background: var(--accent1-color);
+}
+
+header {
+  padding: 1em;
+  text-align: center;
+  color: var(--paragraph-color-on-color);
+  background-color: var(--paragraph-background-color);
+}
+
+header > h1,
+header > h2 {
+  color: var(--headline-color-on-color);
+}
+
+p {
+  font-family: var(--paragraph-font);
+  color: #c9d3e7; /* softer readable text */
+  padding: 1em;
+}
+
+.colors {
+  width: 100%;
+  min-width: 350px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.colors th {
+  background-color: var(--secondary-color);
+  color: var(--accent2-color);
+}
+
+.colors td {
+  width: 25%;
+  height: 3em;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+}
+
+.accent1 {
+  background-color: var(--accent1-color);
+}
+
+.accent2 {
+  background-color: var(--accent2-color);
+  color: black;
+}
+
+p.colored {
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
+}
+
+nav {
+  background-color: var(--nav-background-color);
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+nav {
+  list-style-type: none;
+  display: flex;
+}
+
+nav a {
+  padding: 1em;
+  min-width: 120px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:link,
+nav a:visited {
+  color: var(--nav-link-color);
+}
+
+nav a:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+}
+
+/* sitemap (left as-is but slightly improved visibility) */
+.sitemap > div {
+  text-align: center;
+}
+
+.sm-home,
+.sm-page2,
+.sm-page3 {
+  background-color: var(--secondary-color);
+  color: var(--accent2-color);
+  line-height: 3em;
+}
+
+.top {
+  border-left: 1px solid var(--accent2-color);
+}
+
+.left {
+  border-top: 1px solid var(--accent2-color);
+  border-left: 1px solid var(--accent2-color);
+}
+
+.right {
+  border-top: 1px solid var(--accent2-color);
+  border-right: 1px solid var(--accent2-color);
+}
