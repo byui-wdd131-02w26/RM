@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -5,14 +6,12 @@ body {
     color: white;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
+    background: #16365c; 
 }
 
 #langBtn {
@@ -23,7 +22,6 @@ header {
     cursor: pointer;
     font-weight: bold;
 }
-
 
 .tabs {
     display: flex;
@@ -40,7 +38,7 @@ header {
     color: white;
     cursor: pointer;
     border-radius: 20px;
-    transition: 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tabs button:hover,
@@ -49,21 +47,21 @@ header {
     color: black;
 }
 
-
 .image-viewer {
     text-align: center;
     margin: 20px 0;
+    min-height: 300px; 
 }
 
 .image-viewer img {
     width: 100%;
     max-width: 400px;
+    height: auto;
     border-radius: 15px;
     display: none; 
     margin: 0 auto;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
-
 
 .menu {
     max-width: 1200px;
@@ -76,12 +74,11 @@ header {
 
 
 .card {
-    background: rgba(255,255,255,0.08);
+    background: #214c7d;
     border-radius: 20px;
     padding: 15px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    transition: 0.3s;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
@@ -96,7 +93,7 @@ header {
 
 .card p {
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 
