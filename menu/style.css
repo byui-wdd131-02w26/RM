@@ -5,7 +5,7 @@ body {
     color: white;
 }
 
-/* HEADER */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@ header {
     font-weight: bold;
 }
 
-/* TABS */
+
 .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -49,7 +49,22 @@ header {
     color: black;
 }
 
-/* MENU GRID */
+
+.image-viewer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-viewer img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    display: none; 
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
 .menu {
     max-width: 1200px;
     margin: auto;
@@ -59,7 +74,7 @@ header {
     gap: 20px;
 }
 
-/* CARD */
+
 .card {
     background: rgba(255,255,255,0.08);
     border-radius: 20px;
@@ -67,6 +82,7 @@ header {
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -83,7 +99,7 @@ header {
     opacity: 0.8;
 }
 
-/* PRICE */
+
 .price {
     margin-top: 10px;
     font-weight: bold;
