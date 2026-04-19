@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewEra Auditing</title>
+  <meta name="description" content="NewEra Auditing ofron shërbime profesionale auditimi, assurance, kontabiliteti dhe konsulence financiare në Shqipëri." />
+  <style>
+    :root {
+      --primary: #0b1c2c;
+      --primary-soft: #13283d;
+      --accent: #c8a96a;
+      --accent-dark: #b28f4d;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --container: 1180px;
+      --shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      line-height: 1.15;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 42px;
+      font-size: 17px;
+    }
+
+    .topbar {
+      background: var(--primary);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      padding: 10px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 28, 44, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+      min-width: 0;
+    }
+
+    .brand-logo,
+    .hero-logo {
+      width: auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .brand-logo {
+      height: 48px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      font-weight: 700;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 4px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(rgba(11, 28, 44, 0.78), rgba(11, 28, 44, 0.84)),
+        url('images/hero-audit.jpg') center center / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 92px 0;
+    }
+
+    .hero-logo {
+      height: 82px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1.4px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+      color: var(--primary);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.35);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .cards-3,
+    .cards-2,
+    .services-grid,
+    .documents-grid,
+    .stats,
+    .why-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards-2,
+    .services-grid,
+    .documents-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card,
+    .service-card,
+    .document-card,
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card h3,
+    .service-card h3,
+    .document-card h3,
+    .contact-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p,
+    .card li,
+    .service-card p,
+    .document-card p,
+    .contact-card p,
+    .contact-card span,
+    .contact-card a,
+    .footer p,
+    .footer a,
+    .text-block p,
+    .text-block li {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .light-bg {
+      background: var(--light);
+    }
+
+    .about-layout,
+    .approach-layout,
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .text-block p + p {
+      margin-top: 16px;
+    }
+
+    .text-block ul {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stat {
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 14px;
+    }
+
+    .why-list {
+      list-style: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .why-list li {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .why-list li::before {
+      content: '•';
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+      color: var(--white);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .contact-item + .contact-item {
+      margin-top: 14px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .documents-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .document-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .document-meta {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .document-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .document-link:hover {
+      color: var(--accent-dark);
+    }
+
+    .upload-box {
+      border: 1px dashed rgba(200, 169, 106, 0.55);
+      background: rgba(200, 169, 106, 0.08);
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 28px;
+    }
+
+    .upload-box h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .upload-box p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fbfcfd;
+      padding: 26px 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .cards-3,
+      .services-grid,
+      .about-layout,
+      .approach-layout,
+      .contact-layout,
+      .cards-2,
+      .why-list,
+      .documents-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-wrap {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav ul {
+        gap: 14px 18px;
+      }
+
+      .hero-content {
+        padding: 64px 0;
+      }
+
+      .hero-logo {
+        height: 62px;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-title,
+      .cta h2 {
+        font-size: 29px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Shërbime profesionale auditimi, assurance, kontabiliteti dhe konsulence financiare</span>
+      <span>NewEra Auditing</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="NewEra Auditing">
+        <img src="images/logo.jpg" alt="Logo NewEra Auditing" class="brand-logo" />
+        <div class="brand-text">
+          <strong>NewEra Auditing</strong>
+          <span>Audit • Assurance • Finance</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#about">Kush Jemi</a></li>
+          <li><a href="#history">Historiku</a></li>
+          <li><a href="#services">Shërbimet</a></li>
+          <li><a href="#approach">Qasja</a></li>
+          <li><a href="#documents">Dokumente</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <img src="images/logo.jpg" alt="NewEra Auditing" class="hero-logo" />
+          <span class="eyebrow">Besueshmëri • Integritet • Profesionalizëm</span>
+          <h1>Partneri juaj profesional në auditim dhe shërbime financiare</h1>
+          <p>
+            NewEra Auditing ofron një qasje të strukturuar dhe të pavarur në auditim, assurance,
+            kontabilitet dhe konsulencë financiare, me fokus te cilësia, transparenca dhe vlera reale për klientin.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Shërbimet Tona</a>
+            <a href="#documents" class="btn btn-secondary">Shiko Dokumentet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-layout">
+        <div>
+          <h2 class="section-title">Kush Jemi</h2>
+          <div class="text-block">
+            <p>
+              NewEra Auditing është një zyrë profesionale auditimi dhe kontabiliteti, e angazhuar në ofrimin e
+              shërbimeve të besueshme, të pavarura dhe me standarde të larta cilësie për bizneset në Shqipëri.
+            </p>
+            <p>
+              E themeluar në vitin 2010 dhe e licencuar si ekspert kontabël në vitin 2015, zyra ka zgjeruar
+              gradualisht aktivitetin duke përfshirë auditimin e pasqyrave financiare dhe shërbime të tjera të sigurimit.
+            </p>
+            <p>
+              Ne punojmë në përputhje me standardet profesionale, kuadrin ligjor në fuqi dhe parimet e integritetit,
+              objektivitetit dhe konfidencialitetit, duke ndërtuar marrëdhënie afatgjata me klientët tanë mbi bazën e besimit.
+            </p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>2010</strong>
+            <span>Fillimi i aktivitetit profesional</span>
+          </div>
+          <div class="stat">
+            <strong>2015</strong>
+            <span>Licencim si ekspert kontabël</span>
+          </div>
+          <div class="stat">
+            <strong>ISA</strong>
+            <span>Qasje e bazuar në standarde profesionale</span>
+          </div>
+          <div class="stat">
+            <strong>IFRS / SKK</strong>
+            <span>Mbështetje në raportim dhe përputhshmëri</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-bg" id="history">
+      <div class="container">
+        <h2 class="section-title">Historiku Ynë</h2>
+        <p class="section-intro">
+          Zhvillimi i NewEra Auditing është ndërtuar mbi përvojën praktike, rritjen profesionale dhe zgjerimin gradual të shërbimeve në përputhje me nevojat e tregut.
+        </p>
+        <div class="cards-3">
+          <article class="card">
+            <h3>Fillimet</h3>
+            <p>
+              Aktiviteti nisi në vitin 2010 me fokus në kontabilitet dhe mbështetje financiare për biznese që kërkonin korrektësi, organizim dhe raportim të saktë.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Zgjerimi Profesional</h3>
+            <p>
+              Me rritjen e kërkesës për transparencë dhe kontroll profesional, në vitin 2015 u arrit licencimi si ekspert kontabël, duke shënuar një fazë të re zhvillimi.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Sot</h3>
+            <p>
+              Sot NewEra Auditing ofron shërbime auditimi, assurance, kontabiliteti dhe konsulence financiare për klientë që kërkojnë siguri, qartësi dhe mbështetje profesionale.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Çfarë Ofrojmë</h2>
+        <p class="section-intro">
+          Shërbimet tona janë të ndërtuara për të mbështetur klientët në raportimin financiar, kontrollin profesional dhe përputhshmërinë me kërkesat ligjore e standardet përkatëse.
+        </p>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Auditim i Pasqyrave Financiare</h3>
+            <p>
+              Ofrim i shërbimeve të auditimit me fokus në identifikimin e risqeve, vlerësimin e kontrolleve dhe rritjen e besueshmërisë së raportimit financiar.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Shërbime Assurance</h3>
+            <p>
+              Rishikime të kufizuara, procedura të dakorduara dhe angazhime të tjera të sigurimit, sipas nevojave të klientit dhe kërkesave rregullatore.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Kontabilitet dhe Raportim Financiar</h3>
+            <p>
+              Mbështetje në organizimin e kontabilitetit, përgatitjen e pasqyrave financiare dhe strukturimin e informacionit financiar në mënyrë të saktë dhe të qartë.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Konsulencë Financiare</h3>
+            <p>
+              Asistencë në analizë financiare, përmirësim procesesh, strukturim financiar dhe mbështetje profesionale në vendimmarrje.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-bg" id="mission">
+      <div class="container cards-2">
+        <article class="card">
+          <h3>Misioni Ynë</h3>
+          <p>
+            Të ofrojmë shërbime auditimi dhe financiare me cilësi të lartë, duke ndihmuar klientët të rrisin transparencën, besueshmërinë dhe vlerën e informacionit të tyre financiar.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Vizioni Ynë</h3>
+          <p>
+            Të jemi një zyrë e besueshme dhe profesionale në tregun shqiptar, e njohur për integritetin, pavarësinë, standardin e lartë të punës dhe përkushtimin ndaj zhvillimit të vazhdueshëm profesional.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="container approach-layout">
+        <div>
+          <h2 class="section-title">Qasja Jonë</h2>
+          <div class="text-block">
+            <p>
+              Ne besojmë se një shërbim cilësor ndërtohet mbi kuptimin e qartë të aktivitetit të klientit,
+              identifikimin e risqeve kryesore dhe aplikimin e një metodologjie të strukturuar e profesionale.
+            </p>
+            <p>
+              Qasja jonë bazohet në planifikim të kujdesshëm, analizë të thelluar, komunikim të vazhdueshëm me klientin
+              dhe fokus në çështjet që kanë ndikim real në raportimin financiar dhe vendimmarrje.
+            </p>
+            <ul>
+              <li>Qasje e bazuar në risk dhe materialitet</li>
+              <li>Komunikim i qartë dhe transparent me klientin</li>
+              <li>Respektim i etikës, pavarësisë dhe cilësisë profesionale</li>
+              <li>Përshtatje me nevojat dhe karakteristikat e çdo subjekti</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2 class="section-title">Pse të Na Zgjidhni</h2>
+          <ul class="why-list">
+            <li>Qasje profesionale dhe e personalizuar</li>
+            <li>Pavarësi, integritet dhe objektivitet</li>
+            <li>Përvojë praktike në auditim dhe financë</li>
+            <li>Komunikim i qartë dhe bashkëpunim i vazhdueshëm</li>
+            <li>Përshtatje me standardet dhe ligjin</li>
+            <li>Fokus në cilësi dhe vlerë reale për klientin</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-bg" id="documents">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">Dokumente</h2>
+    <p class="section-intro" style="text-align:center; margin:0 auto 40px;">
+      Raporte dhe publikime të disponueshme për shkarkim.
+    </p>
+
+    <div style="max-width:600px; margin:0 auto; text-align:left;">
+      <h3 style="color: var(--primary); margin-bottom:16px; text-align:center;">Raporte dhe Publikime</h3>
+      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:14px;">
+        <li>
+          <a class="document-link" href="documents/raporti-1.pdf" target="_blank" rel="noopener">• Raporti Financiar</a>
+        </li>
+        <li>
+          <a class="document-link" href="documents/raporti-2.pdf" target="_blank" rel="noopener">• Publikim Profesional</a>
+        </li>
+        <li>
+          <a class="document-link" href="documents/raporti-3.pdf" target="_blank" rel="noopener">• Analizë Financiare</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Një partner profesional për një raportim më të sigurt</h2>
+          <p>
+            Nëse kërkoni një zyrë që kombinon përvojën, seriozitetin dhe një qasje të strukturuar profesionale,
+            NewEra Auditing është pranë jush për të ofruar mbështetje të besueshme dhe zgjidhje të qëndrueshme.
+          </p>
+          <a href="#contact" class="btn btn-primary">Kërko Kontakt</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-bg" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <h2 class="section-title">Na Kontaktoni</h2>
+          <p class="section-intro">
+            Për informacion mbi shërbimet tona ose për të diskutuar nevojat e biznesit tuaj, na kontaktoni për një komunikim profesional dhe të drejtpërdrejtë.
+          </p>
+          <div class="contact-card">
+            <h3>Informacion Kontakti</h3>
+            <div class="contact-item">
+              <strong>Emri i Zyrës</strong>
+              <span>NewEra Auditing</span>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:info@neweraauditing.com">info@neweraauditing.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Telefon</strong>
+              <a href="tel:+355690000000">+355 69 000 0000</a>
+            </div>
+            <div class="contact-item">
+              <strong>Adresa</strong>
+              <span>Vlorë, Shqipëri</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Përgjigje e shpejtë</h3>
+          <p>
+            Na dërgoni një email me përshkrimin e shkurtër të nevojës suaj dhe do t’ju kontaktojmë për hapat e mëtejshëm.
+          </p>
+          <div class="upload-box">
+            <h3>Shënim praktik</h3>
+            <p>
+              Nëse këtë faqe po e kaloni në WordPress, seksioni i dokumenteve mund të lidhet shumë lehtë me PDF-të që ngarkoni te Media Library.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <p>© 2026 NewEra Auditing. Të gjitha të drejtat e rezervuara.</p>
+      <p><a href="#home">Kthehu në krye</a></p>
+    </div>
+  </footer>
+</body>
+</html>
